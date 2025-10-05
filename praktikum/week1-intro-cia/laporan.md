@@ -1,20 +1,26 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Minggu ke-: 1  
+Topik: Week1-Intro-CIA  
+Nama: Achmad Wahyudi  
+NIM: 230202728  
+Kelas: 5IKRA  
 
 ---
 
 ## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
+Menjelaskan sejarah dan evolusi kriptografi dari masa klasik hingga modern.
+Menyebutkan prinsip Confidentiality, Integrity, Availability (CIA) dengan benar.
+Menyimpulkan peran kriptografi dalam sistem keamanan informasi modern.
+Menyiapkan repositori GitHub sebagai media kerja praktikum.
 
 ---
 
 ## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+Kriptografi adalah seni atau ilmu yang mempelajari bahasa pengkodean untuk menjaga kerahasiaan suatu pesan. Istilah ini berasal dari Yunani yaitu "kryptos" (tersembunyi) dan "graphein" (menulis). plaintext (naskah asli) kemudian diubah menjadi ciphertext (naskah yang formatnya diubah dengan pengkodean tertentu agar tidak dapat dibaca pihak lain). Proses pengubahan ini disebut dengan enkripsi. sementara kelbalikannya atau mengubah ciphertext menjadi plaintext disebut sebagai dekripsi. Kedua proses ini memerlukan kunci unruk dapat melakukan enkripsi dan dekripsi. kunci ini berisi algoritma bagaimana pengkodean dibuat.
+
+Kriptografi dimulai sejak era klasik dengan teknik yang masih sederhana.  
+
+
 
 ---
 
