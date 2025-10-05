@@ -1,14 +1,17 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Minggu ke-: 1
+Topik: Week1-intro-cia 
+Nama: Achmad Wahyudi  
+NIM: 230202728  
+Kelas: 5IKRA  
 
 ---
 
 ## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
+Menjelaskan sejarah dan evolusi kriptografi dari masa klasik hingga modern.
+Menyebutkan prinsip Confidentiality, Integrity, Availability (CIA) dengan benar.
+Menyimpulkan peran kriptografi dalam sistem keamanan informasi modern.
+Menyiapkan repositori GitHub sebagai media kerja praktikum.
 
 ---
 
