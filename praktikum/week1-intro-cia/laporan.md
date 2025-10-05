@@ -16,9 +16,11 @@ Menyiapkan repositori GitHub sebagai media kerja praktikum.
 ---
 
 ## 2. Dasar Teori
-Kriptografi adalah seni atau ilmu yang mempelajari bahasa pengkodean untuk menjaga kerahasiaan suatu pesan. Istilah ini berasal dari Yunani yaitu "kryptos" (tersembunyi) dan "graphein" (menulis). plaintext (naskah asli) kemudian diubah menjadi ciphertext (naskah yang formatnya diubah dengan pengkodean tertentu agar tidak dapat dibaca pihak lain). Proses pengubahan ini disebut dengan enkripsi. sementara kelbalikannya atau mengubah ciphertext menjadi plaintext disebut sebagai dekripsi. Kedua proses ini memerlukan kunci unruk dapat melakukan enkripsi dan dekripsi. kunci ini berisi algoritma bagaimana pengkodean dibuat.
+Kriptografi adalah seni atau ilmu yang mempelajari bahasa pengkodean untuk menjaga kerahasiaan suatu pesan. Istilah ini berasal dari Yunani yaitu "kryptos" (tersembunyi) dan "graphein" (menulis). Plaintext (naskah asli) kemudian diubah menjadi ciphertext (naskah yang formatnya diubah dengan pengkodean tertentu agar tidak dapat dibaca pihak lain). Proses pengubahan ini disebut dengan enkripsi. Sementara kelbalikannya atau mengubah ciphertext menjadi plaintext disebut sebagai dekripsi. Kedua proses ini memerlukan kunci unruk dapat melakukan enkripsi dan dekripsi. kunci ini berisi algoritma bagaimana pengkodean dibuat.
 
-Kriptografi dimulai sejak era klasik dengan teknik yang masih sederhana.  
+Kriptografi dimulai sejak era klasik dengan teknik yang masih sederhana. Seperti teknik skitala sparta yang digunakan bangsa sparta dengan tongkat berdiameter sama, kemusia teknis ceaesar cipher dengan menggeser huruf alfabet. pekembangan berikutnya terjadi pada kemunculkan mesin enigma pada masa penrang dunia II, dengan teknologi yang komplesks dimasanya. Memasuki era kontemporer, kriptografi telah bertransformasi melalui kehadiran algoritma-algoritma canggih seperti RSA dan AES, yang kini menjadi pilar utama dalam mengamankan infrastruktur dan aktivitas digital modern.
+
+Prinsip-prinsip dalam kriptografi sangat menekankan keamaanan informasi. Prinsip ini beruapa kerahasian 
 
 
 
