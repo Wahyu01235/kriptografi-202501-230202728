@@ -20,9 +20,11 @@ Kriptografi adalah seni atau ilmu yang mempelajari bahasa pengkodean untuk menja
 
 Kriptografi dimulai sejak era klasik dengan teknik yang masih sederhana. Seperti teknik skitala sparta yang digunakan bangsa sparta dengan tongkat berdiameter sama, kemusia teknis ceaesar cipher dengan menggeser huruf alfabet. pekembangan berikutnya terjadi pada kemunculkan mesin enigma pada masa penrang dunia II, dengan teknologi yang komplesks dimasanya. Memasuki era kontemporer, kriptografi telah bertransformasi melalui kehadiran algoritma-algoritma canggih seperti RSA dan AES, yang kini menjadi pilar utama dalam mengamankan infrastruktur dan aktivitas digital modern.
 
-Prinsip-prinsip dalam kriptografi sangat menekankan keamaanan informasi. Prinsip ini beruapa kerahasian 
-
-
+Prinsip-prinsip dalam kriptografi sangat menekankan keamaanan informasi. Prinsip ini beruapa:
+- Kerahasiaan (Confidentiality): Menjamin bahwa informasi hanya dapat diakses oleh pihak yang memiliki wewenang atau kunci yang tepat. Ini adalah fungsi paling dasar dari enkripsi untuk mencegah penyadapan.
+- Integritas (Integrity): Memastikan bahwa pesan atau data tidak mengalami perubahan, baik disengaja maupun tidak, selama proses transmisi dari pengirim ke penerima.
+- Otentikasi (Authentication): Memastikan dan memverifikasi identitas asli dari pengirim dan penerima pesan, sehingga mencegah peniruan atau pemalsuan identitas.
+Ketiga prinsip ini, sering disebut sebagai bagian dari pilar utama keamanan siber, menjadi fondasi dalam merancang sistem keamanan yang efektif.
 
 ---
 
