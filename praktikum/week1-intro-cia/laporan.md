@@ -39,9 +39,9 @@ Ketiga prinsip ini, sering disebut sebagai bagian dari pilar utama keamanan sibe
 ## 4. Langkah Percobaan
 (Tuliskan langkah yang dilakukan sesuai instruksi.  
 Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
-2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+1. Meskipun tidak ada satu nama tunggal, Claude Shannon sering dianggap sebagai "bapak kriptografi modern" karena karyanya yang meletakkan fondasi matematis dan ilmiah untuk bidang ini. Namun, era modern tidak akan lengkap tanpa kontribusi revolusioner dari Whitfield Diffie dan Martin Hellman. Mereka adalah penemu konsep kriptografi kunci publik, sebuah gagasan yang melahirkan metode pertukaran kunci Diffie-Hellman  dan menjadi dasar bagi sebagian besar sistem keamanan internet yang kita gunakan saat ini.
+2. Beberapa algoritma kunci publik sangat populer dan vital untuk keamanan digital modern. Salah satu yang paling dikenal adalah RSA (Rivest-Shamir-Adleman), yang sering diandalkan untuk keperluan otentikasi dan pembuatan tanda tangan digital. Selain itu, terdapat ECC (Elliptic Curve Cryptography) yang efisien dan banyak digunakan untuk melindungi transaksi online. Ada pula protokol Diffie-Hellman Key Exchange, yang perannya sangat krusial dalam memungkinkan dua pihak untuk menyetujui sebuah kunci rahasia bersama melalui saluran komunikasi yang tidak aman.
+3. MPerbedaan utama antara kriptografi klasik dan modern terletak pada kompleksitas metode dan basis keamanannya. Kriptografi klasik, seperti Caesar Cipher, bekerja pada level karakter dengan menggunakan teknik sederhana seperti pergeseran huruf (substitusi). Keamanannya seringkali bergantung pada kerahasiaan metode yang digunakan. Sebaliknya, kriptografi modern, seperti RSA dan AES, beroperasi pada level data biner dan didasarkan pada masalah matematika yang sangat kompleks. Keamanannya tidak lagi bergantung pada kerahasiaan algoritma, melainkan pada kerahasiaan kunci (key), yang membuatnya jauh lebih kuat dan tahan terhadap serangan komputasi.
 
 ---
 
