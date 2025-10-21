@@ -1,20 +1,24 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Minggu ke-: 2
+Topik: Cryptosystem (Komponen, Enkripsi & Dekripsi, Simetris & Asimetris)
+Nama: Achmad Wahyudi 
+NIM: 230202728
+Kelas: 5IKRA
+
 
 ---
 
 ## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
+1. Mengidentifikasi komponen dasar kriptosistem (plaintext, ciphertext, kunci, algoritma).  
+2. Menggambarkan proses enkripsi dan dekripsi sederhana.  
+3. Mengklasifikasikan jenis kriptosistem (simetris dan asimetris).  
 
 ---
 
 ## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+Sebuah kriptosistem adalah kerangka kerja lengkap yang digunakan untuk mengamankan data, terdiri dari lima komponen inti: plaintext (pesan asli yang dapat dibaca), ciphertext (pesan tersandi yang acak), algoritma enkripsi, algoritma dekripsi, dan kunci. Proses utamanya, enkripsi, adalah mengubah plaintext menjadi ciphertext menggunakan algoritma dan sebuah kunci. Sementara dekripsi adalah proses kebalikannya, yakni mengubah ciphertext kembali menjadi plaintext menggunakan algoritma dan kunci yang sesuai, sehingga hanya penerima yang sah yang dapat membaca pesan tersebut.
+
+Berdasarkan manajemen kuncinya, kriptosistem terbagi dua: Simetris dan Asimetris. Kriptografi Simetris (seperti AES atau DES) menggunakan satu kunci rahasia yang sama untuk enkripsi dan dekripsi; metode ini sangat cepat namun memiliki kelemahan dalam distribusi kunci yang aman. Sebaliknya, Kriptografi Asimetris (seperti RSA atau ECC) menggunakan sepasang kunci (kunci publik dan kunci privat); kunci publik digunakan untuk mengenkripsi dan dapat dibagikan secara bebas, sementara hanya pemilik kunci privat yang dapat mendekripsinya. Sistem asimetris ini memecahkan masalah distribusi kunci, meskipun prosesnya lebih lambat secara komputasi.
 
 ---
 
@@ -40,15 +44,97 @@ Contoh format:
 Gunakan blok kode:
 
 ```python
-# contoh potongan kode
-def encrypt(text, key):
-    return ...
-```
-)
+# file: praktikum/week2-cryptosystem/src/simple_crypto.py
+
+def _transform(text, key, direction):
+    """
+    Fungsi inti untuk menggeser karakter.
+    direction=1 untuk enkripsi, direction=-1 untuk dekripsi.
+    """
+    output_chars = []
+    for char in text:
+        if char.isalpha():
+            # Tentukan basis (65 untuk 'A', 97 untuk 'a')
+            base = 65 if char.isupper() else 97
+            
+            # Hitung pergeseran
+            # 1. Ubah ke 0-25 (ord(char) - base)
+            # 2. Terapkan pergeseran ( ... + (key * direction))
+            # 3. Modulo 26 untuk wrap-around
+            # 4. Kembalikan ke nilai ASCII ( ... + base)
+            new_ord = ((ord(char) - base + (key * direction)) % 26) + base
+            output_chars.append(chr(new_ord))
+        else:
+            # Jika bukan alfabet, tambahkan karakter asli
+            output_chars.append(char)
+            
+    # Gabungkan semua karakter dalam list menjadi satu string
+    return "".join(output_chars)
+
+def encrypt(plaintext, key):
+    """
+    Enkripsi plaintext menggunakan pergeseran positif.
+    """
+    return _transform(plaintext, key, 1)
+
+def decrypt(ciphertext, key):
+    """
+    Dekripsi ciphertext menggunakan pergeseran negatif.
+    """
+    return _transform(ciphertext, key, -1)
+
+def main():
+    """
+    Fungsi utama untuk menjalankan program.
+    """
+    # Nilai-nilai ini dijaga agar keluaran tetap sama
+    message = "<nim><nama>"
+    key = 5
+
+    # Panggil fungsi enkripsi dan dekripsi
+    enc = encrypt(message, key)
+    dec = decrypt(enc, key)
+
+    # Mencetak hasil ke konsol menggunakan format yang berbeda (f-string)
+    # namun menghasilkan teks yang identik.
+    print(f"Plaintext : {message}")
+    print(f"Ciphertext: {enc}")
+    print(f"Decrypted : {dec}")
+
+if __name__ == "__main__":
+    main()
 
 ---
 
 ## 6. Hasil dan Pembahasan
+Diagram
++-----------+
+| Plaintext |
++-----------+
+      |
+      v
++-----------------------+
+|   Algoritma Enkripsi  |
+|         +             |
+|       Kunci           |
++-----------------------+
+      |
+      v
++------------+
+| Ciphertext |
++------------+
+      |
+      v
++-----------------------+
+|   Algoritma Dekripsi  |
+|         +             |
+|       Kunci           |
++-----------------------+
+      |
+      v
++-----------+
+| Plaintext |
++-----------+
 (- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
 - Berikan tabel atau ringkasan hasil uji jika diperlukan.  
 - Jelaskan apakah hasil sesuai ekspektasi.  
@@ -64,11 +150,58 @@ Hasil eksekusi program Caesar Cipher:
 ---
 
 ## 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
-)
----
+
+### Komponen Utama Kriptosistem
+
+Sebuah kriptosistem terdiri dari lima komponen utama:
+1.  **Plaintext (Pesan Asli):** Data atau pesan asli yang dapat dibaca dan dimengerti.
+2.  **Ciphertext (Pesan Tersandi):** Data atau pesan setelah dienkripsi; tampak acak dan tidak dapat dibaca.
+3.  **Algoritma Enkripsi:** Fungsi matematis atau aturan yang mengubah plaintext menjadi ciphertext.
+4.  **Algoritma Dekripsi:** Fungsi matematis atau aturan kebalikan yang mengubah ciphertext kembali menjadi plaintext.
+5.  **Kunci (Key):** Sebuah nilai (bisa berupa angka, kata, atau frasa) yang digunakan oleh algoritma enkripsi dan dekripsi. Keamanan kriptosistem modern bergantung pada kerahasiaan kuncinya, bukan algoritmanya.
+
+### Perbedaan Kriptografi Simetris vs Asimetris
+
+#### Kriptografi Simetris (Symmetric-Key Cryptography)
+Kriptografi simetris menggunakan **satu kunci yang sama** untuk proses enkripsi dan dekripsi. Pengirim dan penerima harus memiliki dan menjaga kerahasiaan kunci yang sama ini.
+
+* **Contoh Algoritma:** AES (Advanced Encryption Standard), DES (Data Encryption Standard), 3DES, RC4, Blowfish.
+* **Analogi:** Kunci rumah. Anda menggunakan kunci yang sama untuk mengunci dan membuka pintu. Jika Anda ingin teman Anda masuk, Anda harus menduplikasi kunci itu dan memberikannya kepadanya.
+
+#### Kriptografi Asimetris (Asymmetric-Key Cryptography)
+Kriptografi asimetris menggunakan **sepasang kunci** yang berbeda namun terhubung secara matematis: **Kunci Publik (Public Key)** dan **Kunci Privat (Private Key)**.
+* Kunci Publik boleh disebarluaskan ke siapa saja.
+* Kunci Privat harus dijaga kerahasiaannya oleh pemiliknya.
+* Pesan yang dienkripsi dengan Kunci Publik hanya bisa didekripsi dengan Kunci Privat pasangannya.
+
+* **Contoh Algoritma:** RSA (Rivest-Shamir-Adleman), ECC (Elliptic Curve Cryptography), DSA (Digital Signature Algorithm).
+* **Analogi:** Gembok dan Kunci Gembok. Anda menyebarkan gembok (Kunci Publik) ke semua orang. Siapa pun bisa menggunakannya untuk mengunci kotak. Tapi, hanya Anda yang memegang kunci gembok (Kunci Privat) yang bisa membukanya.
+
+**1. Sebutkan komponen utama dalam sebuah kriptosistem.**
+   Seperti yang telah dijelaskan di atas, lima komponen utamanya adalah:
+   1.  Plaintext
+   2.  Ciphertext
+   3.  Algoritma Enkripsi
+   4.  Algoritma Dekripsi
+   5.  Kunci (atau sepasang kunci)
+
+**2. Apa kelebihan dan kelemahan sistem simetris dibandingkan asimetris?**
+
+   | Aspek | Kriptografi Simetris | Kriptografi Asimetris |
+   | :--- | :--- | :--- |
+   | **Kelebihan** | **Sangat Cepat.** Jauh lebih efisien secara komputasi, cocok untuk mengenkripsi data dalam jumlah besar (misal: file video, database). | **Menyelesaikan Masalah Distribusi Kunci.** Tidak perlu bertukar kunci rahasia. |
+   | | | **Memfasilitasi Tanda Tangan Digital.** Dapat digunakan untuk membuktikan keaslian pengirim (non-repudiasi). |
+   | **Kelemahan** | **Masalah Distribusi Kunci.** Sangat sulit untuk membagikan kunci rahasia secara aman kepada penerima. | **Sangat Lambat.** Jauh lebih intensif secara komputasi dibandingkan simetris. |
+   | | **Tidak bisa untuk Tanda Tangan Digital.** Karena kunci sama, tidak bisa membuktikan siapa yang mengenkripsi. | Tidak efisien untuk mengenkripsi data dalam jumlah besar. |
+
+**3. Mengapa distribusi kunci menjadi masalah utama dalam kriptografi simetris?**
+   Masalah ini (dikenal sebagai *Key Distribution Problem*) muncul karena **pengirim dan penerima harus memiliki kunci rahasia yang identik** sebelum mereka dapat berkomunikasi dengan aman.
+
+   Pertanyaannya adalah: *Bagaimana cara Anda mengirimkan kunci rahasia itu kepada penerima dengan aman?*
+   * Jika Anda mengirim kunci melalui saluran komunikasi yang sama (misal: internet), musuh (penyadap) dapat menyadap kunci tersebut. Jika kunci bocor, seluruh sistem keamanan runtuh.
+   * Anda tidak bisa mengenkripsi kuncinya, karena untuk mengenkripsi kunci, Anda butuh kunci lain (ini menjadi masalah "ayam dan telur").
+   
+   Inilah mengapa kriptografi asimetris diciptakan. Dalam praktiknya, sistem *hybrid* sering digunakan: Kriptografi **asimetris** dipakai untuk **mengenkripsi dan bertukar Kunci Sesi (Session Key) simetris** dengan aman. Setelah Kunci Sesi diterima, kedua belah pihak menggunakan kriptografi **simetris** (yang cepat) untuk mengenkripsi sisa data komunikasi mereka.
 
 ## 8. Kesimpulan
 (Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
