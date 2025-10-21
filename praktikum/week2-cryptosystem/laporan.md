@@ -187,7 +187,7 @@ Kriptografi asimetris menggunakan **sepasang kunci** yang berbeda namun terhubun
 
 2. Apa kelebihan dan kelemahan sistem simetris dibandingkan asimetris?
 
-Kelebihan utama kriptografi simetris adalah kecepatannya yang superior, membuatnya sangat efisien untuk mengenkripsi volume data yang besar seperti file video atau database. Namun, kelemahan utamanya terletak pada "masalah distribusi kunci," yaitu kesulitan dalam membagikan kunci rahasia secara aman kepada semua pihak yang terlibat, dan juga tidak dapat digunakan untuk tanda tangan digital karena kunci enkripsi dan dekripsi yang sama.
+kelebihan utama kriptografi simetris adalah kecepatannya yang superior, membuatnya sangat efisien untuk mengenkripsi volume data yang besar seperti file video atau database. Namun, kelemahan utamanya terletak pada "masalah distribusi kunci," yaitu kesulitan dalam membagikan kunci rahasia secara aman kepada semua pihak yang terlibat, dan juga tidak dapat digunakan untuk tanda tangan digital karena kunci enkripsi dan dekripsi yang sama.
 
 Sebaliknya, kriptografi asimetris unggul dalam menyelesaikan masalah distribusi kunci karena menggunakan pasangan kunci publik dan privat, di mana kunci publik dapat dibagikan secara terbuka. Kelebihan lainnya adalah kemampuannya untuk memfasilitasi tanda tangan digital, yang memungkinkan pembuktian keaslian pengirim dan non-repudiasi. Namun, kelemahan mendasar dari kriptografi asimetris adalah kecepatan pemrosesannya yang jauh lebih lambat dan lebih intensif secara komputasi, membuatnya tidak efisien untuk mengenkripsi data dalam jumlah besar.
 
