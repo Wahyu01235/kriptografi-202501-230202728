@@ -185,16 +185,13 @@ Kriptografi asimetris menggunakan **sepasang kunci** yang berbeda namun terhubun
    4.  Algoritma Dekripsi
    5.  Kunci (atau sepasang kunci)
 
-**2. Apa kelebihan dan kelemahan sistem simetris dibandingkan asimetris?**
+2. Apa kelebihan dan kelemahan sistem simetris dibandingkan asimetris?
 
-   | Aspek | Kriptografi Simetris | Kriptografi Asimetris |
-   | :--- | :--- | :--- |
-   | **Kelebihan** | **Sangat Cepat.** Jauh lebih efisien secara komputasi, cocok untuk mengenkripsi data dalam jumlah besar (misal: file video, database). | **Menyelesaikan Masalah Distribusi Kunci.** Tidak perlu bertukar kunci rahasia. |
-   | | | **Memfasilitasi Tanda Tangan Digital.** Dapat digunakan untuk membuktikan keaslian pengirim (non-repudiasi). |
-   | **Kelemahan** | **Masalah Distribusi Kunci.** Sangat sulit untuk membagikan kunci rahasia secara aman kepada penerima. | **Sangat Lambat.** Jauh lebih intensif secara komputasi dibandingkan simetris. |
-   | | **Tidak bisa untuk Tanda Tangan Digital.** Karena kunci sama, tidak bisa membuktikan siapa yang mengenkripsi. | Tidak efisien untuk mengenkripsi data dalam jumlah besar. |
+Kelebihan utama kriptografi simetris adalah kecepatannya yang superior, membuatnya sangat efisien untuk mengenkripsi volume data yang besar seperti file video atau database. Namun, kelemahan utamanya terletak pada "masalah distribusi kunci," yaitu kesulitan dalam membagikan kunci rahasia secara aman kepada semua pihak yang terlibat, dan juga tidak dapat digunakan untuk tanda tangan digital karena kunci enkripsi dan dekripsi yang sama.
 
-**3. Mengapa distribusi kunci menjadi masalah utama dalam kriptografi simetris?**
+Sebaliknya, kriptografi asimetris unggul dalam menyelesaikan masalah distribusi kunci karena menggunakan pasangan kunci publik dan privat, di mana kunci publik dapat dibagikan secara terbuka. Kelebihan lainnya adalah kemampuannya untuk memfasilitasi tanda tangan digital, yang memungkinkan pembuktian keaslian pengirim dan non-repudiasi. Namun, kelemahan mendasar dari kriptografi asimetris adalah kecepatan pemrosesannya yang jauh lebih lambat dan lebih intensif secara komputasi, membuatnya tidak efisien untuk mengenkripsi data dalam jumlah besar.
+
+3. Mengapa distribusi kunci menjadi masalah utama dalam kriptografi simetris?**
    Masalah ini (dikenal sebagai *Key Distribution Problem*) muncul karena **pengirim dan penerima harus memiliki kunci rahasia yang identik** sebelum mereka dapat berkomunikasi dengan aman.
 
    Pertanyaannya adalah: *Bagaimana cara Anda mengirimkan kunci rahasia itu kepada penerima dengan aman?*
@@ -204,8 +201,9 @@ Kriptografi asimetris menggunakan **sepasang kunci** yang berbeda namun terhubun
    Inilah mengapa kriptografi asimetris diciptakan. Dalam praktiknya, sistem *hybrid* sering digunakan: Kriptografi **asimetris** dipakai untuk **mengenkripsi dan bertukar Kunci Sesi (Session Key) simetris** dengan aman. Setelah Kunci Sesi diterima, kedua belah pihak menggunakan kriptografi **simetris** (yang cepat) untuk mengenkripsi sisa data komunikasi mereka.
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa kriptosistem merupakan fondasi keamanan data yang esensial, berlandaskan pada proses enkripsi dan dekripsi menggunakan algoritma dan kunci. Pemahaman mengenai komponen dasar seperti plaintext, ciphertext, algoritma, dan kunci sangat penting untuk merancang dan menganalisis sistem keamanan informasi yang efektif.
 
+Lebih lanjut, praktikum ini menegaskan perbedaan mendasar antara kriptografi simetris dan asimetris. Kriptografi simetris menawarkan efisiensi komputasi yang tinggi untuk data bervolume besar, namun menghadapi tantangan signifikan dalam distribusi kunci yang aman. Sebaliknya, kriptografi asimetris memecahkan masalah distribusi kunci dan mendukung tanda tangan digital, meskipun dengan biaya komputasi yang lebih tinggi. Integrasi kedua pendekatan ini, seringkali dalam bentuk sistem hibrida, menjadi solusi praktis untuk mencapai keseimbangan antara keamanan dan performa.
 ---
 
 ## 9. Daftar Pustaka
