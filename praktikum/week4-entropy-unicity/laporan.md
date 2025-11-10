@@ -93,7 +93,7 @@ print("Waktu brute force AES-128 =", brute_force_time(2**128), "hari")
 (Salin kode program utama yang dibuat atau dimodifikasi.  
 Gunakan blok kode:
 
-```python
+```
 import math
 
 # Langkah 1: Perhitungan Entropi
@@ -154,7 +154,7 @@ if __name__ == "__main__":
         print("   Input tidak valid! Harap masukkan bilangan bulat.")
 
     print("\n" + "=" * 50)
----
+```
 
 ## 6. Hasil dan Pembahasan
 (- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
@@ -182,9 +182,10 @@ Hasil eksekusi program Caesar Cipher:
     Serangan brute force masih menjadi ancaman meskipun algoritma enkripsinya sudah kuat, seperti AES. Kelemahan utamanya seringkali tidak terletak pada algoritma itu sendiri, tetapi pada implementasinya, yaitu pemilihan kunci yang lemah. Jika sebuah kunci dibuat berdasarkan kata sandi yang singkat atau mudah ditebak (seperti "123456" atau "password"), penyerang tidak perlu menyerang seluruh ruang kunci teoretis algoritma tersebut (misalnya $2^{128}$). Sebaliknya, mereka dapat melakukan brute force pada ruang kunci yang jauh lebih kecil yang hanya berisi kata sandi umum atau kombinasi sederhana. Peningkatan pesat dalam kekuatan komputasi, terutama menggunakan GPU atau komputasi awan, juga membuat serangan brute force terhadap kata sandi yang "cukup rumit" sekalipun menjadi lebih cepat dan lebih mungkin dilakukan.
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Percobaan ini secara jelas menunjukkan bahwa entropi kunci adalah faktor krusial yang menentukan kelayakan serangan brute force. Sandi klasik seperti Sandi Caesar, dengan entropi yang sangat rendah sekitar 4.70 bit, memiliki ruang kunci yang sangat kecil sehingga dapat dieksplorasi secara instan oleh komputer modern. Sebaliknya, algoritma modern seperti AES-128 memiliki entropi masif 128 bit. Ini berarti jumlah kemungkinan kuncinya ($2^{128}$) sangat besar sehingga waktu yang diperlukan untuk serangan brute force menjadi tidak praktis, bahkan dengan superkomputer sekalipun.
 
----
+Analisis ini diperkuat dengan perhitungan jarak keunikan. Hasil perhitungan menunjukkan bahwa sandi dengan entropi rendah, seperti Sandi Caesar, juga memiliki jarak keunikan yang sangat pendek. Hal ini mengonfirmasi secara teoretis bahwa hanya diperlukan beberapa karakter ciphertext saja bagi seorang analis kripto untuk dapat secara unik menentukan kunci yang benar. Gabungan antara entropi rendah dan jarak keunikan yang pendek ini memvalidasi mengapa sandi-sandi tersebut dianggap tidak aman untuk penggunaan praktis saat ini, karena mereka gagal memberikan ketidakpastian yang cukup untuk menahan serangan.
+
 
 ## 9. Daftar Pustaka
 (Cantumkan referensi yang digunakan.  
