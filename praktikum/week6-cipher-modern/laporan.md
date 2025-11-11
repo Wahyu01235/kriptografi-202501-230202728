@@ -96,7 +96,7 @@ print("Decrypted:", decrypted.decode())
 ---
 
 ## 5. Source Code
-###DES
+### DES
 ```
 # des_encryption.py
 from Crypto.Cipher import DES
@@ -554,11 +554,15 @@ if save_choice == 'y':
 ---
 
 ## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
+Implementasi ketiga algoritma cipher modern (DES, AES, dan RSA) berhasil dijalankan menggunakan library pycryptodome pada Python. Hasil percobaan sesuai dengan ekspektasi dan dasar teori.
 
+DES: Skrip des_encryption.py berhasil mengenkripsi dan mendekripsi plaintext menggunakan kunci 8-byte (64-bit). Program ini juga menangani padding secara otomatis menggunakan pad dan unpad, yang diperlukan karena DES adalah sandi blok 64-bit. Meskipun berhasil secara fungsional, pengujian ini menegaskan bahwa DES hanya bergantung pada kunci 56-bit efektif (8 bit untuk paritas), yang sesuai dengan teori bahwa DES kini dianggap tidak aman.
+
+AES: Skrip aes_encryption.py berhasil diimplementasikan dengan berbagai ukuran kunci (AES-128, AES-192, AES-256) dan mode operasi (EAX, GCM, CBC). Mode EAX dan GCM, yang merupakan mode Authenticated Encryption with Associated Data (AEAD), menunjukkan praktik modern dengan menghasilkan ciphertext dan tag autentikasi. Proses dekripsi juga memerlukan verifikasi tag ini, yang menambah lapisan keamanan integritas data. Mode CBC memerlukan Initialization Vector (IV) dan padding eksplisit. Hasil ini menunjukkan fleksibilitas dan keamanan AES yang jauh lebih unggul dibandingkan DES.
+
+RSA: Skrip rsa_encryption.py berhasil mendemonstrasikan fungsionalitas kriptografi asimetris. Proses pembangkitan kunci menghasilkan pasangan kunci publik dan privat yang berbeda. Enkripsi pesan berhasil dilakukan menggunakan kunci publik, dan dekripsi hanya bisa dilakukan menggunakan kunci privat yang sesuai. Selain itu, skrip ini juga berhasil mengimplementasikan tanda tangan digital, di mana pesan ditandatangani menggunakan kunci privat dan diverifikasi menggunakan kunci publik. Ditemui juga batasan ukuran pesan untuk enkripsi RSA, yang mengharuskan pesan panjang dibagi menjadi chunks, membuktikan secara praktis bahwa RSA tidak efisien untuk enkripsi data bervolume besar.
+
+Secara keseluruhan, percobaan ini memvalidasi perbedaan fundamental antara sistem simetris yang cepat (AES) dan sistem asimetris yang serbaguna (RSA) untuk pertukaran kunci dan tanda tangan digital.
 Hasil eksekusi program Caesar Cipher:
 
 ![Hasil Eksekusi](screenshots/output.png)
@@ -581,15 +585,17 @@ Hasil eksekusi program Caesar Cipher:
 ---
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Praktikum ini berhasil mengimplementasikan tiga algoritma kriptografi modern fundamental: DES, AES, dan RSA, dengan memanfaatkan library pycryptodome di Python. Implementasi ini secara praktis mendemonstrasikan perbedaan inti antara kriptografi simetris (DES dan AES) dan asimetris (RSA). Terlihat jelas bahwa DES dan AES memerlukan satu kunci rahasia yang sama untuk enkripsi dan dekripsi, serta memerlukan mode operasi (seperti EAX atau CBC) dan padding untuk menangani aliran data. Sebaliknya, implementasi RSA menunjukkan proses pembangkitan pasangan kunci (publik dan privat), di mana enkripsi dilakukan oleh satu kunci (publik) dan dekripsi hanya dapat dilakukan oleh kunci pasangannya (privat).
+
+Melalui percobaan ini, perbedaan keamanan dan kasus penggunaan praktis menjadi sangat nyata. Implementasi DES menyoroti ketergantungannya pada kunci 56-bit yang kini dianggap tidak aman, sementara AES menunjukkan standar modern dengan kunci 128-bit (atau lebih) yang jauh lebih aman terhadap serangan brute force. Selain itu, percobaan enkripsi data besar pada RSA membuktikan keterbatasan kinerjanya dan batasan ukuran data input, yang mengharuskan data dibagi menjadi chunks. Hal ini mengonfirmasi bahwa algoritma asimetris tidak efisien untuk enkripsi data bervolume besar, namun sangat unggul untuk tugas-tugas spesifik seperti pertukaran kunci sesi secara aman (untuk digunakan oleh AES) atau, seperti yang juga didemonstrasikan, untuk pembuatan dan verifikasi tanda tangan digital.
 
 ---
 
 ## 9. Daftar Pustaka
-(Cantumkan referensi yang digunakan.  
-Contoh:  
-- Katz, J., & Lindell, Y. *Introduction to Modern Cryptography*.  
-- Stallings, W. *Cryptography and Network Security*.  )
+Katz, J., & Lindell, Y. (2021). Introduction to Modern Cryptography (3rd ed.). CRC Press.
+Stallings, W. (2020). Cryptography and Network Security: Principles and Practice (8th ed.). Pearson.
+Paar, C., & Pelzl, J. (2010). Understanding Cryptography: A Textbook for Students and Practitioners. Springer.
+PyCryptodome Developers. (2025). PyCryptodome Documentation. Diakses pada 11 November 2025, dari https://www.pycryptodome.org/en/latest/
 
 ---
 
