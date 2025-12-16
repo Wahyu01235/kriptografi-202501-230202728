@@ -89,14 +89,12 @@ Dalam Tanksale (2024), dijelaskan bahwa pada perangkat modern (seperti IoT), imp
 
 ---
 
-## 9. Daftar Pustaka
-(Cantumkan referensi yang digunakan.  
-Contoh:  
--Stallings, W. (2022). Cryptography and Network Security: Principles and Practice (Global Edition). Pearson.
--Jamaludin, Arizal, Mardalius, & Pakpahan, A. F. (2022). Kriptografi: Teknik Keamanan Data. Yayasan Kita Menulis.
--Tanksale, V. (2024). Efficient Elliptic Curve Diffie–Hellman Key Exchange for Resource-Constrained IoT Devices. Electronics, 13(18), 3631.
--Musa, S. M. (2023). Network Security and Cryptography: A Self-Teaching Introduction (2nd ed.). Mercury Learning and Information.
--Saepulrohman, A., & Negara, R. M. (2021). Security Analysis of Diffie-Hellman Algorithm in Cryptographic Key Exchange. Jurnal Teknik Informatika (JUTI), 19(2).
+## 9. Daftar Pustaka  
+- Stallings, W. (2022). Cryptography and Network Security: Principles and Practice (Global Edition). Pearson.
+- Jamaludin, Arizal, Mardalius, & Pakpahan, A. F. (2022). Kriptografi: Teknik Keamanan Data. Yayasan Kita Menulis.
+- Tanksale, V. (2024). Efficient Elliptic Curve Diffie–Hellman Key Exchange for Resource-Constrained IoT Devices. Electronics, 13(18), 3631.
+- Musa, S. M. (2023). Network Security and Cryptography: A Self-Teaching Introduction (2nd ed.). Mercury Learning and Information.
+- Saepulrohman, A., & Negara, R. M. (2021). Security Analysis of Diffie-Hellman Algorithm in Cryptographic Key Exchange. Jurnal Teknik Informatika (JUTI), 19(2).
 ---
 
 ## 10. Commit Log
