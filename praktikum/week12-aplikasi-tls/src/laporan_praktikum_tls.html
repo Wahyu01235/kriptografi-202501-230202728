@@ -1,0 +1,129 @@
+
+    <html>
+    <head>
+        <title>Laporan Praktikum TLS & E-Commerce</title>
+        <style>
+            body { font-family: Arial; margin: 40px; }
+            table { border-collapse: collapse; width: 100%; }
+            th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+            th { background-color: #f0f0f0; }
+            ul { margin-top: 10px; }
+            pre { background: #fafafa; padding: 10px; overflow-x: auto; }
+        </style>
+    </head>
+    <body>
+
+    <h1>Laporan Praktikum Keamanan Jaringan</h1>
+
+    <h2>Langkah 1 — Analisis SSL/TLS</h2>
+    <table>
+        <tr>
+            <th>Website</th><th>Issuer CA</th><th>Valid From</th><th>Valid Until</th>
+            <th>TLS Version</th><th>Cipher Suite</th><th>Encryption</th><th>Key Length</th>
+        </tr>
+    
+        <tr>
+            <td>www.tokopedia.com</td>
+            <td>DigiCert Inc</td>
+            <td>2025-06-11</td>
+            <td>2026-07-03</td>
+            <td>TLSv1.3</td>
+            <td>TLS_AES_256_GCM_SHA384</td>
+            <td>TLSv1.3</td>
+            <td>256</td>
+        </tr>
+        
+        <tr>
+            <td>www.shopee.co.id</td>
+            <td>GlobalSign nv-sa</td>
+            <td>2025-03-24</td>
+            <td>2026-04-25</td>
+            <td>TLSv1.2</td>
+            <td>ECDHE-RSA-AES128-GCM-SHA256</td>
+            <td>TLSv1.2</td>
+            <td>128</td>
+        </tr>
+        
+        <tr>
+            <td>www.bukalapak.com</td>
+            <td>Sectigo Limited</td>
+            <td>2025-06-02</td>
+            <td>2026-06-02</td>
+            <td>TLSv1.3</td>
+            <td>TLS_AES_128_GCM_SHA256</td>
+            <td>TLSv1.3</td>
+            <td>128</td>
+        </tr>
+        
+    </table>
+
+    <h2>Langkah 2 — Studi Kasus E-Commerce</h2>
+    <p><b>HTTPS (dengan TLS):</b></p>
+    <pre>{
+  "args": {}, 
+  "data": "", 
+  "files": {}, 
+  "form": {
+    "amount": "150000", 
+    "card_number": "4111111111111111", 
+    "password": "password123", 
+    "username": "user_demo"
+  }, 
+  "headers": {
+    "Accept-Encoding": "identity", 
+    "Content-Length": "82", 
+    "Content-Type": "application/x-www-form-urlencoded", 
+    "Host": "httpbin.org", 
+    "User-Agent": "Python-urllib/3.13", 
+    "X-Amzn-Trace-Id": "Root=1-697746e8-648293202babe3a107080df7"
+  }, 
+  "json": null, 
+  "origin": "125.163.155.16", 
+  "url": "https://httpbin.org/post"
+}
+</pre>
+
+    <p><b>HTTP (tanpa TLS):</b></p>
+    <pre>{
+  "args": {}, 
+  "data": "", 
+  "files": {}, 
+  "form": {
+    "amount": "150000", 
+    "card_number": "4111111111111111", 
+    "password": "password123", 
+    "username": "user_demo"
+  }, 
+  "headers": {
+    "Accept-Encoding": "identity", 
+    "Content-Length": "82", 
+    "Content-Type": "application/x-www-form-urlencoded", 
+    "Host": "httpbin.org", 
+    "User-Agent": "Python-urllib/3.13", 
+    "X-Amzn-Trace-Id": "Root=1-697746e9-1c777986765da3875f87b7f2"
+  }, 
+  "json": null, 
+  "origin": "125.163.155.16", 
+  "url": "http://httpbin.org/post"
+}
+</pre>
+
+    <h3>Analisis Langkah 2</h3>
+    <ul>
+    <li>Data transaksi yang dikirim melalui HTTPS dienkripsi selama proses transmisi menggunakan TLS.</li><li>Pada HTTP, data dikirim dalam bentuk plaintext sehingga dapat disadap oleh pihak ketiga.</li><li>TLS melindungi kerahasiaan (confidentiality) dan integritas data transaksi.</li><li>Tanpa TLS, sistem rentan terhadap serangan Man-in-the-Middle (MITM), credential theft, dan session hijacking.</li><li>Penggunaan TLS meningkatkan kepercayaan pengguna terhadap platform e-commerce.</li>
+    </ul>
+
+    <h2>Langkah 3 — Analisis Etika & Privasi</h2>
+    <p><b>Pesan Asli:</b> Email internal perusahaan bersifat rahasia</p>
+    <p><b>Pesan Terenkripsi (simulasi):</b> RW1haWwgaW50ZXJuYWwgcGVydXNhaGFhbiBiZXJzaWZhdCByYWhhc2lh</p>
+    <p><b>Pesan Terdekripsi:</b> Email internal perusahaan bersifat rahasia</p>
+    <p><b>Hash Integritas (SHA-256):</b> 37b8c5dd9596d545a5bfe1ff1831005d77bc81e5662c31286ed5cc42a3c9b1ce</p>
+
+    <h3>Analisis Langkah 3</h3>
+    <ul>
+    <li>Email terenkripsi bertujuan melindungi kerahasiaan isi pesan dari pihak yang tidak berwenang.</li><li>Hanya pihak yang memiliki mekanisme dekripsi yang sesuai yang dapat membaca isi email.</li><li>Dalam konteks organisasi, enkripsi email dapat menghambat proses audit dan investigasi internal.</li><li>Dekripsi email karyawan oleh perusahaan menimbulkan dilema antara keamanan organisasi dan privasi individu.</li><li>Kebijakan pemerintah terkait pengawasan komunikasi terenkripsi harus menyeimbangkan keamanan nasional dan hak privasi warga.</li><li>Pelemahan sistem enkripsi berisiko menciptakan kerentanan sistemik yang dapat disalahgunakan.</li>
+    </ul>
+
+    </body>
+    </html>
+    
